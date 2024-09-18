@@ -1,0 +1,37 @@
+.form-scroll {
+    max-height: 400px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .custom-header {
+    background-color: #003366; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 15px;
+   
+  }
+  
+  

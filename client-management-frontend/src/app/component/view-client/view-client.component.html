@@ -1,0 +1,79 @@
+<div class="container p-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm p-3 mb-5 bg-body rounded">
+          <div class="text-center fs-4 custom-header">VIEW JOB SHEET</div>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td class="fw-bold custom-label">Client Name:</td>
+                <td>{{ client.clientName }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Contact Info:</td>
+                <td>{{ client.contactInfo }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Received Date:</td>
+                <td>{{ client.receivedDate | date: 'yyyy-MM-dd' }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Inventory Received:</td>
+                <td>{{ client.inventoryReceived }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Inventory Image/Document/Video:</td>
+                <td><a href="{{ fileUrl }}" target="_blank">View File</a></td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Reported Issues:</td>
+                <td>{{ client.reportedIssues }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Client Notes:</td>
+                <td>{{ client.clientNotes }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Assigned Technician:</td>
+                <td>{{ client.assignedTechnician }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Estimated Amount:</td>
+                <td>{{ client.estimatedAmount || 'None' }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Deadline:</td>
+                <td>{{ client.deadline | date: 'yyyy-MM-dd' }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold custom-label">Status:</td>
+                <td>{{ client.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <div class="form-group mb-3">
+            <label for="note" class="form-label">Add or Update Note:</label>
+            <textarea id="note" class="form-control" [(ngModel)]="clientNotes" rows="3"></textarea>
+          </div>
+  
+         
+          <button class="btn btn-primary w-100 custom-button" (click)="saveNote()">Save Note</button>
+  
+         
+          <div class="mt-2 d-flex justify-content-start">
+            <a href="#" class="text-decoration-none text-primary me-2" (click)="editClient()">Edit</a>
+            <a href="#" class="text-decoration-none text-danger" (click)="deleteClient()">Delete</a>
+          </div>
+  
+          
+          
+            <a href="#" class="text-decoration-none text-center text-primary" (click)="goBack()">Back</a>
+            <div class="d-flex justify-content-start mt-3">
+                <button class="btn btn-outline-secondary btn-sm" (click)="saveAsPDF()">Save as PDF</button>
+            </div>     
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,76 @@
+<div class="card-body">
+  <div class="d-flex justify-content-between align-items-center mb-1">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control me-2"
+        placeholder="Search by Client Name or ID..."
+        [(ngModel)]="searchTerm"
+      />
+    </div>
+    <div>
+      <button class="btn custom-search-btn" (click)="searchClients()">Search</button>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <button class="btn custom-add-btn" (click)="addClient()">New Job Sheet</button>
+</div>
+
+<div class="container p-3 custom-container-width">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card shadow bg-body rounded">
+        <table class="table table-striped custom-table-width">
+          <thead class="custom-table-header">
+            <tr>
+              <th>#</th>
+              <th>Client Id</th>
+              <th>Client Name</th>
+              <th>Contact Info</th>
+              <th>Received Date</th>
+              <th>Inventory Received</th>
+              <th>Reported Issues</th>
+              <th>Client Notes</th>
+              <th>Assigned Technician</th>
+              <th>Estimated Amount</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let jobSheet of filteredJobSheets(); let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ jobSheet.clientId }}</td>
+              <td>{{ jobSheet.clientName }}</td>
+              <td>{{ jobSheet.contactInfo }}</td>
+              <td>{{ jobSheet.receivedDate | date }}</td>
+              <td>{{ jobSheet.inventoryReceived }}</td>
+              <td>{{ jobSheet.reportedIssues }}</td>
+              <td>{{ jobSheet.clientNotes }}</td>
+              <td>{{ jobSheet.assignedTechnician }}</td>
+              <td>{{ jobSheet.estimatedAmount }}</td>
+              <td>{{ jobSheet.deadline | date }}</td>
+              <td>
+                <span class="badge"
+                  [ngClass]="{'badge-success': jobSheet.status === 'in-progress', 'badge-warning': jobSheet.status === 'pending'}"
+                  style="color: black;">
+                  {{ jobSheet.status }}
+                </span>
+              </td>
+              <td>
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-sm btn-info" (click)="getClientById(jobSheet.id)">View</button>
+                  <button class="btn btn-sm btn-warning ms-1" (click)="editClient(jobSheet.id)">Edit</button>
+                  <button class="btn btn-sm btn-danger ms-1" (click)="deleteClient(jobSheet.id)">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

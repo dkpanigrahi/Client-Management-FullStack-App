@@ -1,0 +1,76 @@
+<div class="container p-3">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
+          <div class="text-center fs-4 custom-header">
+            EDIT JOB SHEET
+          </div>
+          <div class="card-body form-scroll">
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="clientId" class="form-label fw-bold">Client ID :</label>
+                <input type="text" id="clientId" [(ngModel)]="client.clientId" name="clientId" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="clientName" class="form-label fw-bold">Client Name :</label>
+                <input type="text" id="clientName" [(ngModel)]="client.clientName" name="clientName" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="contactInfo" class="form-label fw-bold">Contact Info :</label>
+                <input type="text" id="contactInfo" [(ngModel)]="client.contactInfo" name="contactInfo" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="receivedDate" class="form-label fw-bold">Received Date :</label>
+                <input type="date" id="receivedDate" [(ngModel)]="client.receivedDate" name="receivedDate" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="inventoryReceived" class="form-label fw-bold">Inventory Received :</label>
+                <input type="text" id="inventoryReceived" [(ngModel)]="client.inventoryReceived" name="inventoryReceived" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="reportedIssues" class="form-label fw-bold">Reported Issues :</label>
+                <input type="text" id="reportedIssues" [(ngModel)]="client.reportedIssues" name="reportedIssues" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="clientNotes" class="form-label fw-bold">Client Notes :</label>
+                <textarea id="clientNotes" [(ngModel)]="client.clientNotes" name="clientNotes" class="form-control" rows="3" required></textarea>
+              </div>
+  
+              <div class="mb-3">
+                <label for="assignedTechnician" class="form-label fw-bold">Assigned Technician :</label>
+                <input type="text" id="assignedTechnician" [(ngModel)]="client.assignedTechnician" name="assignedTechnician" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="estimatedAmount" class="form-label fw-bold">Estimated Amount :</label>
+                <input type="number" id="estimatedAmount" [(ngModel)]="client.estimatedAmount" name="estimatedAmount" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="deadline" class="form-label fw-bold">Deadline :</label>
+                <input type="date" id="deadline" [(ngModel)]="client.deadline" name="deadline" class="form-control" required>
+              </div>
+  
+              <div class="mb-3">
+                <label for="status" class="form-label fw-bold">Status :</label>
+                <select id="status" [(ngModel)]="client.status" name="status" class="form-control" required>
+                  <option value="pending">Pending</option>
+                  <option value="inProgress">In Progress</option>
+                  <option value="complete">Complete</option>
+                </select>
+              </div>
+  
+              <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

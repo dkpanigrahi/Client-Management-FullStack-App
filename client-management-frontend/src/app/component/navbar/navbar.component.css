@@ -1,0 +1,12 @@
+.dashboard-header {
+    background-color: #003366;
+    color: white;
+    padding: 15px; 
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    max-width: 100%; 
+    margin: 0 auto;
+    line-height: 1.3; 
+  }
+  

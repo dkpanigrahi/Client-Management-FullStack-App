@@ -1,0 +1,34 @@
+
+.custom-search-btn {
+    background-color: #003366; 
+    color: #fff;
+    border: none;
+  }
+  
+  .custom-search-btn:hover {
+    background-color: #18a3a5; 
+  }
+  
+  .custom-add-btn {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+  }
+  
+  .custom-add-btn:hover {
+    background-color: #003366;
+  }
+  
+  
+  /* Custom table heading color */
+  .custom-table-header th {
+    background-color: #003366; 
+    color: white;
+    text-align: start;
+  }
+  
+  .custom-container-width {
+    max-width: 100%; 
+    margin: 0 auto; 
+  }
+  
